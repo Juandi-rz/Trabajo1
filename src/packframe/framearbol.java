@@ -172,6 +172,11 @@ public class framearbol extends javax.swing.JFrame {
     private void btnnivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnivelActionPerformed
         // TODO add your handling code here:
         this.arbol.encontrar(Integer.parseInt(txtnum.getText()), this.arbol.getRaiz());
+        if(this.arbol.isAfirmar()==true){
+            System.out.println("si existe");
+        }else{
+            System.out.println("No existe");
+        }
         txtnum.setText("");
     }//GEN-LAST:event_btnnivelActionPerformed
 
