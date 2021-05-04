@@ -41,6 +41,7 @@ public class framearbol extends javax.swing.JFrame {
         btnlistarpost = new javax.swing.JButton();
         btnnivel = new javax.swing.JButton();
         btnaltura = new javax.swing.JButton();
+        btneliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,6 +93,13 @@ public class framearbol extends javax.swing.JFrame {
             }
         });
 
+        btneliminar.setText("Eliminar");
+        btneliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -103,26 +111,29 @@ public class framearbol extends javax.swing.JFrame {
                         .addComponent(txtnum, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                         .addComponent(jButton2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(153, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btneliminar)
+                                .addGap(26, 26, 26)
+                                .addComponent(jButton1))
+                            .addComponent(btnnivel)))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnlistentre)
-                            .addComponent(btnaltura)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnlistarpost))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
-                            .addComponent(btnnivel))))
+                            .addComponent(btnaltura)
+                            .addComponent(btnlistarpost))))
                 .addGap(93, 93, 93))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(75, 75, 75)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(btneliminar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
@@ -185,6 +196,15 @@ public class framearbol extends javax.swing.JFrame {
         this.arbol.retornarAltura();
     }//GEN-LAST:event_btnalturaActionPerformed
 
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
+        // TODO add your handling code here:
+        if(this.arbol.eliminar(Integer.parseInt(txtnum.getText()), this.arbol.getRaiz())==false){
+            System.out.println("No se encontró el nodo");
+        }else{
+            System.out.println("Se encontró el nodo");
+        }
+    }//GEN-LAST:event_btneliminarActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -223,6 +243,7 @@ public class framearbol extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnaltura;
+    private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnlistarpost;
     private javax.swing.JButton btnlistentre;
     private javax.swing.JButton btnnivel;
