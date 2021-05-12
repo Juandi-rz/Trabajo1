@@ -7,7 +7,7 @@ package arboles;
 
 /**
  *
- * @author DANIEL
+ * @author R
  */
 public class Arboles {
 

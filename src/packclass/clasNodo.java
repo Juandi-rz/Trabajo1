@@ -7,7 +7,7 @@ package packclass;
 
 /**
  *
- * @author DANIEL
+ * @author R
  */
 public class clasNodo {
     private clasNodo izq;

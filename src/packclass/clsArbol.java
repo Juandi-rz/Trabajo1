@@ -7,7 +7,7 @@ package packclass;
 
 /**
  *
- * @author DANIEL
+ * @author R
  */
 public class clsArbol {
     private int altura = 0;
@@ -93,7 +93,9 @@ public class clsArbol {
  public boolean eliminar(int d, clasNodo tmp){
      clasNodo remplazo = raiz;
      boolean hijoIzq = true;
-     if(tmp!= null){
+     if(tmp==null){
+             return false;
+         }else if(tmp!= null){
          if(tmp.getDer()!=null){
              hijoIzq = true;
              encontrar(d, tmp.getDer());
@@ -101,10 +103,9 @@ public class clsArbol {
          if(tmp.getIzq()!=null){
              hijoIzq = false;
              encontrar(d, tmp.getIzq());
-         }if(tmp==null){
-             return false;
          }
-     }if(tmp.getDer()==null && tmp.getIzq()==null){
+     }
+     if(tmp.getDer()==null && tmp.getIzq()==null){
          if(tmp == raiz){
              raiz = null;
          }else if(hijoIzq){
